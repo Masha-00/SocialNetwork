@@ -1,0 +1,11 @@
+<form class="comment-container" [formGroup]="commentForm" class="comment-form">
+  <mat-form-field [formGroup]="commentForm" name="addComment" class="comment-full-width" appearance="fill">
+    <mat-label>Leave a comment</mat-label>
+    <textarea #comment maxlength="500" [formGroup]="commentForm" formControlName="body" matInput name="comment" placeholder="write something..." required></textarea>
+    <mat-hint>{{comment.value.length}} / 500</mat-hint>
+    <mat-error class="alert alert-danger" *ngIf="commentForm.controls['body'].invalid && commentForm.controls['body'].touched">
+      Description must be required
+    </mat-error>
+  </mat-form-field>
+  <button type="submit" (click)="addComment()" [disabled]="submitted" class="btn-comment" mat-flat-button color="primary">COMMENT</button>
+</form>

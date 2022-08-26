@@ -1,0 +1,63 @@
+.post-container{
+  max-width: 500px;
+  min-width: 300px;
+  margin: auto;
+}
+.user-profile, .user-info, .post-info, .post-info-item, .comment, .like{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.post-info, .post-info-item{
+  justify-content: space-between;
+}
+.user-profile-change {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.user-photo{
+  margin-right: 10px;
+  border-radius: 50%;
+}
+mat-icon{
+  color: rgb(98, 43, 226);
+}
+.save{
+  color: #000;
+}
+.post-info-item:first-child{
+  padding-right: 15px;
+}
+.comment-form{
+  max-width: 700px;
+  min-width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.comment-full-width{
+  width: 85%;
+}
+.edit-comment-full{
+  width: 100%;
+}
+.btn-comment{
+  width: 15%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 21.5px;
+}
+.date{
+  font-size: 12px;
+  color: darkgrey;
+}
+.servises {
+  display: flex;
+}
+.servises button {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,20 @@
+<div>
+  <mat-toolbar class="header" color="primary">
+    <mat-toolbar-row>
+      <mat-icon><a class="logo" routerLink="/posts">code</a></mat-icon>
+      <span class="example-spacer"></span>
+      <div class="user-servises">
+        <button class="account btn-logout" mat-mini-fab *ngIf="btnHide" (click)="goToMyProfile()" color="accent" aria-label="Example icon button with a filter list icon">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+        <button class="btn-logout" mat-mini-fab *ngIf="!btnHide" (click)="goToLogin()" color="accent" aria-label="Example icon button with a filter list icon">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+        <button class="btn-logout" mat-mini-fab *ngIf="btnHide" (click)="logout()" color="accent" aria-label="Example icon button with a filter list icon">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</div>

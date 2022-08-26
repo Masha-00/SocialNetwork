@@ -1,0 +1,33 @@
+<div class="post-container">
+  <app-posts *ngIf="!postListIsFetching; else loadingFeed" [post]="post"></app-posts>
+  <app-comment [id]="id"></app-comment>
+  <!-- comment form -->
+  <div class="comments" *ngFor="let comment of postsList">
+    <!-- comment items -->
+      <div class="user-info">
+        <div class="user-profile">
+          <img class="user-photo" src="https://dummyimage.com/30x30/000/fff&text=user" alt="user">
+          <p>{{comment.user?.name}}</p>
+        </div>
+        <div class="servises">
+          <button *ngIf="comment!==editComment" title="edit hero" (click)="editComment = comment" mat-menu-item>
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button (click)="deleteComment(comment._id)" mat-menu-item>
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+        <div *ngIf="comment!==editComment; else update">
+          <p>{{comment.body}}</p>
+          <p class="date">{{comment!.createdAt | date: "dd.MM.YYYY, HH:mm"}}</p>
+          <br>
+        </div>
+        <ng-template #update>
+          <mat-form-field class="example-full-width edit-comment-full" appearance="fill">
+            <textarea [(ngModel)]="editComment.body" (blur)="edit(comment)" (keydowm.enter)="edit(comment)" maxlength="500" matInput></textarea>
+          </mat-form-field>
+        </ng-template>
+      </div>
+</div>
+<ng-template #loadingFeed></ng-template>

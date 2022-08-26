@@ -1,0 +1,16 @@
+.user-container{
+  max-width: 800px;
+  margin: 0 auto;
+}
+.user-profile{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.user-photo{
+  border-radius: 50%;
+  margin-right: 50px;
+}
+.btn-userProfale:hover {
+  background-color: rgb(255, 174, 0);
+}

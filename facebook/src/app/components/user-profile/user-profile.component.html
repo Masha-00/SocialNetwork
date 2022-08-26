@@ -1,0 +1,17 @@
+<div class="user-container">
+  <div class="user-profile">
+    <div>
+      <img class="user-photo" src="https://dummyimage.com/130x130/000/fff&text=User" alt="user-photo">
+    </div>
+    <div class="user-info">
+      <h1>User Name: {{currentUser.name}}</h1>
+      <p>User Email: {{currentUser.email}}</p>
+      <p>User ID: {{currentUser._id}}</p>
+    </div>
+  </div>
+  <button routerLink="/create/post" class="btn-userProfale"  mat-flat-button color="accent">Add Post</button><br><br>
+  <button routerLink="/posts" class="btn-userProfale" mat-flat-button color="accent">List of Posts</button><br><br>
+  <button (click)="updateUser()" class="btn-userProfale" mat-flat-button color="accent">Edit Profile</button><br><br>
+  <button (click)="changePassword()" class="btn-userProfale" mat-flat-button color="accent">Change Password</button><br><br>
+  <button (click)="deleteUser()" class="btn-userProfale" mat-flat-button color="accent">Delete Account</button>
+</div>

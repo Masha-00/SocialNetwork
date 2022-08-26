@@ -1,0 +1,9 @@
+<app-posts *ngFor="let post of postsList" [post]="post"></app-posts>
+<mat-paginator #paginator showFirstLastButtons
+      [length]="postPagination.total"
+      [pageSize]="postPagination.limit"
+      [pageSizeOptions]="[2, 4, 7, 10]"
+      (page)="changePage($event)"
+      aria-label="Select page"
+    >
+</mat-paginator>

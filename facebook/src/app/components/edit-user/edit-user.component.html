@@ -1,0 +1,24 @@
+<div class="updateUser-container">
+  <form action="" [formGroup]="updateUserForm" class="form-updateUser">
+    <p class="welcome-mess">Update User</p>
+    <label for="inputName">Enter your new Name</label><br>
+    <mat-form-field class="form-elem" appearance="fill">
+      <mat-label>Enter your new Name</mat-label>
+      <input matInput placeholder="Pat" value={{currentUser.name}} name="name" formControlName="name" />
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error class="alert alert-danger" *ngIf="updateUserForm.controls['name'].invalid && updateUserForm.controls['name'].touched">
+        Your name must be between 3 and 24 characters
+      </mat-error>
+    </mat-form-field><br>
+    <label for="inputEmail">Enter your new Email</label><br>
+    <mat-form-field class="form-elem" appearance="fill">
+      <mat-label>Enter your new Email</mat-label>
+      <input matInput placeholder="pat@example.com" value={{currentUser.email}} type="email" name="email" formControlName="email" />
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error class="alert alert-danger" *ngIf="updateUserForm.controls['email'].invalid && updateUserForm.controls['email'].touched">
+        Please enter a valid password
+      </mat-error>
+    </mat-form-field><br>
+    <button type="submit" (click)="updateUser()" class="btn-updateProfile" mat-flat-button color="primary">UPDATE PROFILE</button>
+  </form>
+</div>

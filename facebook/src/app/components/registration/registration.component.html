@@ -1,0 +1,40 @@
+<div class="registration-container">
+  <form action="" [formGroup]="signupForm" class="registration-login">
+    <p class="welcome-mess">Create an account</p>
+    <label for="">Name</label><br>
+    <mat-form-field class="form-elem" appearance="fill">
+      <mat-label>Enter your name</mat-label>
+      <input matInput name="name" formControlName="name" placeholder="Masha" />
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error class="alert alert-danger" *ngIf="signupForm.controls['name'].invalid && signupForm.controls['name'].touched">
+        Your name must be between 3 and 24 characters
+      </mat-error>
+    </mat-form-field><br>
+    <label for="">Email</label><br>
+    <mat-form-field class="form-elem" appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" type="email" name="email" formControlName="email" />
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error class="alert alert-danger" *ngIf="signupForm.controls['email'].invalid && signupForm.controls['email'].touched">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field><br>
+    <label for="">Password</label><br>
+    <mat-form-field class="form-elem" appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput name="password" formControlName="password" [type]="hide ? 'password' : 'text'" />
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error class="alert alert-danger" *ngIf="signupForm.controls['password'].invalid && signupForm.controls['password'].touched">
+        Please enter a valid password
+      </mat-error>
+    </mat-form-field><br>
+    <button class="btn-login" (click)="createUser()" mat-flat-button color="primary">REGISTER</button>
+    <div class="servises">
+      <p><a class="servises-link" routerLink="/login">Already have an account</a></p>
+    </div>
+  </form>
+  <router-outlet></router-outlet>
+</div>

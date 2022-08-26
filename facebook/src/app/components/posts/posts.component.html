@@ -1,0 +1,51 @@
+<div class="home-container">
+  <!-- Posts list -->
+  <div class="list-posts">
+    <div class="post-container">
+      <div class="info">
+        <div class="user-info">
+          <img class="user-photo" src="https://dummyimage.com/30x30/000/fff&text=user" alt="user">
+          <p>{{user.name}}</p>
+        </div>
+        <div class="post-info">
+          <div class="post-info-item">
+            <mat-icon>
+              <a class="comment-link" routerLink="/posts/{{ post!._id }}">chat_bubble</a>
+            </mat-icon>
+            <p>{{commentsNumber}}</p>
+          </div>
+          <div class="post-info-item">
+            <mat-icon>favorite</mat-icon>
+            <p>16</p>
+          </div>
+          <div *ngIf="btnHide" class="post-info-item">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button [routerLink]="['/edit/posts', post!._id]" mat-menu-item>
+                <mat-icon>edit</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button (click)="deletePost()" mat-menu-item>
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+      </div>
+      <div class="photo">
+        <img class="post-photo" src="https://dummyimage.com/500x300/000/fff" alt="photo">
+      </div>
+      <div class="post-info"> 
+        <p>{{post!.title}}</p>
+        <mat-icon class="save">bookmark</mat-icon>
+      </div>
+      <div>
+        <p>{{post!.body}}</p>
+      </div>
+      <p class="date">{{post!.createdAt | date: "dd.MM.YYYY, HH:mm"}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="login-container">
+  <form action="" [formGroup]="loginForm" class="form-login">
+    <p class="welcome-mess">Welcome</p>
+    <label for="inputEmail">Email</label><br>
+    <mat-form-field class="form-elem" appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" type="email" name="email" formControlName="email" required />
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error class="alert alert-danger" *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field><br>
+    <label for="inputPassword">Password</label><br>
+    <mat-form-field class="form-elem" appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput name="password" formControlName="password" [type]="hide ? 'password' : 'text'" />
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error class="alert alert-danger" *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+        Please enter a valid password
+      </mat-error>
+    </mat-form-field><br>
+    <button class="btn-login" (click)="loginUser()" mat-flat-button color="primary">LOG IN</button>
+    <div class="servises">
+      <p><a class="servises-link" href="">Forgot your password?</a></p>
+      <p><a class="servises-link" routerLink="/registration">Don't have Acc? Register then!</a></p>
+    </div>
+  </form>
+  <router-outlet></router-outlet>
+</div>

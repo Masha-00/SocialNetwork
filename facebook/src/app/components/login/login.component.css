@@ -1,0 +1,40 @@
+.login-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+.login-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-login{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  max-width: 300px;
+  min-width: 200px;
+}
+.welcome-mess{
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: rgb(113, 30, 191);
+}
+.form-elem{
+  width: 100%;
+}
+.servises{
+  text-align: right;
+}
+.servises-link {
+  text-decoration: none;
+}
+.servises-link:hover {
+  text-decoration: underline;
+}
+.btn-login{
+  padding: 5px 129px;
+}
+.btn-login:hover {
+  background-color: blueviolet;
+}

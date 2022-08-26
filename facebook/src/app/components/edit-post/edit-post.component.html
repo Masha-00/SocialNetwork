@@ -1,0 +1,23 @@
+<div class="updatePost-container">
+  <form action="" [formGroup]="updatePostForm" class="form-updatePost">
+    <p class="welcome-mess">Update Post</p>
+    <label for="inputTitle">Enter new Title</label><br>
+    <mat-form-field class="form-elem" appearance="fill">
+      <mat-label>Enter new Title</mat-label>
+      <input #title maxlength="50" matInput value={{currentPost.title}} placeholder="Pat" name="title" formControlName="title" />
+      <mat-hint>{{title.value.length}} / 50</mat-hint>
+      <mat-error class="alert alert-danger" *ngIf="updatePostForm.controls['title'].invalid && updatePostForm.controls['title'].touched">
+        Title must be between 1 and 50 characters
+      </mat-error>
+    </mat-form-field><br>
+    <label for="inputBody">Enter new Description</label><br>
+    <mat-form-field class="form-elem" appearance="fill">
+      <mat-label>Enter new Description</mat-label>
+      <textarea #body maxlength="5000" matInput value={{currentPost.body}} placeholder="write something" name="body" formControlName="body"></textarea>
+      <mat-error class="alert alert-danger" *ngIf="updatePostForm.controls['body'].invalid && updatePostForm.controls['body'].touched">
+        Description must be between 3 and 5000 characters
+      </mat-error>
+    </mat-form-field><br>
+    <button type="submit" (click)="updatePost()" class="btn-updateProfile" mat-flat-button color="primary">UPDATE POST</button>
+  </form>
+</div>

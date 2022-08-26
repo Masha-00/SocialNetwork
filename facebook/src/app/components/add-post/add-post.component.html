@@ -1,0 +1,22 @@
+<div class="add-post">
+  <form [formGroup]="addPostForm" *ngIf="!submitted" class="addPost-form">
+    <p class="welcome-mess">Create Post</p>
+    <mat-form-field class="addPost-full-width" appearance="fill">
+      <mat-label>Title</mat-label>
+      <input #title maxlength="50" name="title" formControlName="title" matInput placeholder="Ex. Pizza" />
+      <mat-hint>{{title.value.length}} / 50</mat-hint>
+      <mat-error class="alert alert-danger" *ngIf="addPostForm.controls['title'].invalid && addPostForm.controls['title'].touched">
+        Title must be between 1 and 50 characters
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="addPost-full-width" appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea #body maxlength="5000" name="body" formControlName="body" matInput placeholder="Ex. It makes me feel..." required></textarea>
+      <mat-hint>{{body.value.length}} / 5000</mat-hint>
+      <mat-error class="alert alert-danger" *ngIf="addPostForm.controls['body'].invalid && addPostForm.controls['body'].touched">
+        Description must be between 3 and 5000 characters
+      </mat-error>
+    </mat-form-field>
+    <button type="submit" (click)="addPost()" class="addPost-full-width btn-addPost" mat-flat-button color="primary">Add post</button>
+  </form>
+</div>

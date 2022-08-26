@@ -1,0 +1,31 @@
+.updatePost-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+.updatePost-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-updatePost{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  max-width: 300px;
+  min-width: 200px;
+}
+.welcome-mess{
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: rgb(113, 30, 191);
+}
+.form-elem{
+  width: 100%;
+}
+.btn-updateProfile{
+  padding: 5px 105px;
+}
+.btn-updateProfile:hover {
+  background-color: blueviolet;
+}

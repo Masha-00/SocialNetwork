@@ -1,0 +1,43 @@
+.home-container{
+  width: 100%;
+}
+.info, .user-info, .post-info, .post-info-item, .comment, .like{
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+.info, .post-info, .post-info, .post-info-item{
+  justify-content: space-between;
+}
+.user-photo{
+  border-radius: 50%;
+}
+mat-icon{
+  color: rgb(98, 43, 226);
+}
+.save{
+  color: #000;
+}
+.post-info-item:first-child{
+  padding-right: 15px;
+}
+.user-info p {
+  padding-left: 10px;
+}
+.post-photo{
+  width: 100%;
+  height: auto;
+}
+.comment-link{
+  text-decoration: none;
+}
+.comment-link:visited{
+  color: rgb(98, 43, 226);
+}
+.comment-link:hover{
+  color: rgb(41, 7, 126);
+}
+.date{
+  font-size: 12px;
+  color: darkgrey;
+}

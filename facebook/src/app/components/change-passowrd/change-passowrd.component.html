@@ -1,0 +1,30 @@
+<div class="changePassword-container">
+  <form action="" [formGroup]="changePasswordForm" class="form-changePassword">
+    <p class="welcome-mess">Change Password</p>
+    <label for="inputEmail">Enter your current password</label><br>
+    <mat-form-field class="form-elem" appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput name="password" formControlName="password" [type]="hide1 ? 'password' : 'text'" />
+      <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide1 password'"
+        [attr.aria-pressed]="hide1">
+        <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error class="alert alert-danger" *ngIf="changePasswordForm.controls['password'].invalid && changePasswordForm.controls['password'].touched">
+        Please enter a valid password
+      </mat-error>
+    </mat-form-field><br>
+    <label for="inputPassword"> New Password</label><br>
+    <mat-form-field class="form-elem" appearance="fill">
+      <mat-label>Enter new password</mat-label>
+      <input matInput name="newPassword" formControlName="newPassword" [type]="hide2 ? 'password' : 'text'" />
+      <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide2 password'"
+        [attr.aria-pressed]="hide2">
+        <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error class="alert alert-danger" *ngIf="changePasswordForm.controls['newPassword'].invalid && changePasswordForm.controls['newPassword'].touched">
+        Please enter a valid password
+      </mat-error>
+    </mat-form-field><br>
+    <button type="submit" (click)="changePassword()" class="btn-changePassword" mat-flat-button color="primary">CHANGE PASSWORD</button>
+  </form>
+</div>

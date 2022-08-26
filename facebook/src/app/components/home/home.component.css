@@ -1,0 +1,51 @@
+.home-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin: 0 auto;
+}
+.list-posts{
+  margin: 0px 20px;
+}
+.left-subbar{
+  margin-top: 10px;
+  max-width: 150px;
+}
+.mat-form-field-appearance-fill {
+  max-width: 150px;
+}
+.left-subscipt, .subscript{
+  width: 100%;
+}
+.post-container{
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0px 30px;
+}
+.user-photo{
+  border-radius: 50%;
+}
+mat-icon{
+  color: rgb(98, 43, 226);
+}
+.save{
+  color: #000;
+}
+.post-info-item:first-child{
+  padding-right: 15px;
+}
+.user-info p {
+  padding-left: 10px;
+}
+.comment-link{
+  text-decoration: none;
+}
+.comment-link:visited{
+  color: rgb(98, 43, 226);
+}
+.comment-link:hover{
+  color: rgb(41, 7, 126);
+}
+.list{
+  max-width: 150px;
+}
